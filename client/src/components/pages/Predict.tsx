@@ -393,17 +393,6 @@ const PredictPage: React.FC = () => {
 
                                                 <div className="flex items-center justify-between bg-white/60 rounded-lg p-4 shadow-sm">
                                                     <div className="flex items-center gap-3">
-                                                        <TrendingUp className="h-5 w-5 text-indigo-600" />
-                                                        <div>
-                                                            <div className="text-sm font-medium text-slate-700">Linear Regression</div>
-                                                            <div className="text-xs text-slate-500">Baseline linear model</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="text-lg font-semibold text-slate-800">${result.LinearRegression.toFixed(2)}</div>
-                                                </div>
-
-                                                <div className="flex items-center justify-between bg-white/60 rounded-lg p-4 shadow-sm">
-                                                    <div className="flex items-center gap-3">
                                                         <Database className="h-5 w-5 text-sky-600" />
                                                         <div>
                                                             <div className="text-sm font-medium text-slate-700">Random Forest</div>
