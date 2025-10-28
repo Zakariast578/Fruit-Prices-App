@@ -43,7 +43,7 @@ app.add_middleware(
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "../models")
 
 rf_model = joblib.load(os.path.join(MODEL_DIR, "random_forest_model.pkl"))
-lr_model = joblib.load(os.path.join(MODEL_DIR, "linear_regression_model.pkl"))
+# lr_model = joblib.load(os.path.join(MODEL_DIR, "linear_regression_model.pkl"))
 dt_model = joblib.load(os.path.join(MODEL_DIR, "decision_tree_model.pkl"))
 scaler = joblib.load(os.path.join(MODEL_DIR, "scaler.pkl"))
 label_encoder_fruit = joblib.load(os.path.join(MODEL_DIR, "label_encoder_fruit.pkl"))
@@ -74,7 +74,7 @@ class FruitFeatures(BaseModel):
 def home():
     return {
         "message": "🍉 Fruit Price Prediction API running!",
-        "models": ["Random Forest", "Linear Regression", "Decision Tree"],
+        "models": ["Random Forest", "AND ",  "Decision Tree"],
         "fruits_endpoint": "/fruits",
     }
 
@@ -158,14 +158,14 @@ def predict_price(data: FruitFeatures):
 
     try:
         rf_pred = rf_model.predict(final_features)[0]
-        lr_pred = lr_model.predict(final_features)[0]
+        # lr_pred = lr_model.predict(final_features)[0]
         dt_pred = dt_model.predict(final_features)[0]
 
         result = {
             "matched_fruit": matched_fruit,
             "predictions": {
                 "RandomForest": round(float(rf_pred), 2),
-                "LinearRegression": round(float(lr_pred), 2),
+                # "LinearRegression": round(float(lr_pred), 2),
                 "DecisionTree": round(float(dt_pred), 2),
             },
         }
